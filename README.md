@@ -105,7 +105,7 @@ setDataRef.on('child_changed', function(snapshot) {
 });
 ```
 
-If you aren't sure if you are updating or adding, then just have the Firebase Database on your screen as it will flash different colors based on what action is going on.
+If you aren't sure if you are updating or adding, then just have the Firebase Database on your screen as it will flash different colors based on what event is going on.
 
 ![](img/live.gif)
 
