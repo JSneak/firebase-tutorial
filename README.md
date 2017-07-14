@@ -118,7 +118,7 @@ Lets add a button and text box on our page for this example.
 ```
 The two ways I update/create values in the database is with **.push()** and **.set()**.
 
-You use **.push()** if you want to create a new child location with a new generated id. You can then use **.set()** to update or create a key:value pair.
+You use **.push()** if you want to create a new child location with a new generated id. You can then use **.set()** to update a key:value pair.
 
 Below is an example of using **.push()** and **.set()**
 ```javascript
@@ -130,11 +130,22 @@ function pushData(){
   });
 }
 ```
-Another example, except this time it is only using **.set**
+Another example, except this time it is only using **.set**.
 ```javascript
 function setData(){
   var data = document.getElementById("dataValue").value;
   var dataRef = database.ref('/newData');
+  console.log(data)
+  dataRef.set({
+    value: data
+  });
+}
+```
+If you want to make a new parent and child without having to use **.push()**, you would do this if you don't want to use a firebase generated UID, then do the example below.
+```javascript
+function setData(){
+  var data = document.getElementById("dataValue").value;
+  var dataRef = database.ref('/newData/' + "nameOfNewParent");
   console.log(data)
   dataRef.set({
     value: data
